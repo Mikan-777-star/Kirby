@@ -14,9 +14,11 @@ public class Test4 {
         }catch(IOException e){
             e.printStackTrace();
         }
-        String test = mikan.tester.Test.TEST;
-        StringBuilder sb = new StringBuilder();
-        test.chars().map(i -> prime_number[i]).forEach(i -> sb.append(i).append(' '));
-        System.out.println(sb);
+        String test = "パインアメマン";
+        double i1 = 1;
+        int[] i2 = test.chars().map(i -> prime_number[i]).toArray();
+        for(int i : i2)i1 *= i;
+        i1 *= 7;
+        System.out.println(i1);
     }
 }

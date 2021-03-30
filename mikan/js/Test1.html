@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://mikan-777-star.github.io/Mikan_1/Test1.css">
+    <title>てすと</title>
+</head>
+<body>
+    <main id = "main">
+        <img class = "ALL" src="https://mikan-777-star.github.io/Mikan_1/Syamiko.jpg" id = "main2">
+        <img class = "ALL" src="https://mikan-777-star.github.io/Mikan_1/monmo26980.jpg" id = "main1">
+    </main>
+    <script>
+        var main1 = document.getElementById('main1');
+        var main2 = document.getElementById('main2');
+        var deg = 0;
+        var test = () =>{
+            s = 'rotateZ('+deg+'deg) rotateX('+deg+'deg)';
+            s1 = 'rotateY('+deg+'deg)';
+            deg += 3;
+            main1.style.transform = s;
+            main2.style.transform = s1;
+            if(deg % 360 === 0){
+                deg = 0;
+            }
+        };
+        setInterval(test, 20);
+    </script>
+</body>
+</html>

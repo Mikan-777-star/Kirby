@@ -30,14 +30,15 @@ class test{
         //System.out.println(c.table);
         //System.out.println(c.len);
         StringBuffer sb = new StringBuffer("result -> ");
-        java.util.Arrays.stream(new int[this.length]).parallel().
-        map(i -> c.table[(int)(Math.random() * c.len)]).
-        forEach(i ->{synchronized(sb){
-            sb.append((char)i);
-        }});
+        java.util.Arrays.stream(new int[this.length]).parallel()
+        .map(i -> c.table[(int)(Math.random() * c.len)])
+        .forEach(i ->{
+            synchronized(sb){
+                sb.append((char)i);
+            }
+        });
         return sb.toString();
     }
-    
     public void write(OutputStream os) throws IOException{
         os.write(result.getBytes());
         os.write('\n');
@@ -45,9 +46,9 @@ class test{
     }
 
     enum Chara{
-        ALL("QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890_"), 
+        ALL("QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890_*<>/\\\"'+-;:,.][{}|#$%&'()?!"), 
         Number("1234567890"), 
-        Character("QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm");
+        Character("QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890");
         char[] table;
         int len;
         Chara(String str){
